@@ -12,6 +12,7 @@ server:
           
 spring: 
  profiles: dev
+ 
  security:
   basic:
     enabled: false
@@ -19,6 +20,7 @@ spring:
  management:
   security:
     enabled: false
+ 
  flyway:
   locations: dev.db.migration
  jpa:
