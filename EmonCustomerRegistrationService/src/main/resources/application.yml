@@ -1,0 +1,41 @@
+application:
+    name: EMonCustomerRegistration
+error:
+  whitelabel:
+    enabled: false
+logging:
+  level:
+     root: info
+
+server:
+  port: 9090
+          
+spring: 
+ profiles: dev
+ security:
+  basic:
+    enabled: false
+
+ management:
+  security:
+    enabled: false
+ flyway:
+  locations: dev.db.migration
+ jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      naming-strategy: org.hibernate.cfg.DefaultComponentSafeNamingStrategy
+  
+---
+spring: 
+  profiles: cloud
+  flyway:
+    locations: db.migration
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: none    
+---
+spring:
+  profiles:
+    active: dev

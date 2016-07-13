@@ -1,0 +1,7 @@
+applications:
+  - name: EmonCustomerRegistrationService
+    host: EmonCustomerRegistrationService
+    services:
+      - Emon-config-server
+    env:
+      SPRING_PROFILES_ACTIVE: cloud
